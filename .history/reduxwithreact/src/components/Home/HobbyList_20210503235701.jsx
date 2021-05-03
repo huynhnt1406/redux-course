@@ -1,0 +1,23 @@
+import React from 'react'
+import PropTypes from  'prop-types'
+
+HobbyList.PropTypes = {
+    hobbyList : PropTypes.array
+}
+HobbyList.defaultProps = {
+    hobbyList: []
+}
+function HobbyList() {
+    const {hobbyList} = props
+    return (
+       <ul>
+            {
+                hobbyList.map(hobby => (
+                    <li key={hobby.id}>{hobby.title}</li>
+                ))
+            }
+       </ul>
+    );
+}
+
+export default HobbyList
